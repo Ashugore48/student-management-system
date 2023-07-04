@@ -4,19 +4,20 @@ window.onload = function() {
     var table = document.getElementById("userInfoTable").getElementsByTagName('tbody')[0];
     for (var i = 0; i < userData.length; i++) {
       var newRow = table.insertRow(table.rows.length);
-      var cell1 = newRow.insertCell(0);
-      var cell2 = newRow.insertCell(1);
-      var cell3 = newRow.insertCell(2);
-      var cell4 = newRow.insertCell(3);
-      var cell5 = newRow.insertCell(4);
-      var cell6 = newRow.insertCell(5);
-      
+      var cell0 = newRow.insertCell(0);
+      var cell1 = newRow.insertCell(1);
+      var cell2 = newRow.insertCell(2);
+      var cell3 = newRow.insertCell(3);
+      var cell4 = newRow.insertCell(4);
+      var cell5 = newRow.insertCell(5);
+      // var cell6 = newRow.insertCell(5);
+      cell0.innerHTML = i+1;
       cell1.innerHTML = userData[i].name;
       cell2.innerHTML = userData[i].email;
       cell3.innerHTML = userData[i].marks;
       cell4.innerHTML = userData[i].age;
-      cell5.innerHTML = userData[i].degree;
-      cell6.innerHTML = '<button class="actionBtn" onclick="editRow(this)"><img src="assets/edit-icon.png" alt=""></button><button class="actionBtn" onclick="deleteRow(this)"><img src="assets/trashcan-icon.png" alt=""></button>';
+      cell5.innerHTML = userData[i].degree + '<button class="actionBtn" onclick="deleteRow(this)"><img src="assets/trashcan-icon.png" alt=""></button><button class="actionBtn" onclick="editRow(this)"><img src="assets/edit-icon.png" alt=""></button>';
+      // cell6.innerHTML = '<button class="actionBtn" onclick="editRow(this)"><img src="assets/edit-icon.png" alt=""></button><button class="actionBtn" onclick="deleteRow(this)"><img src="assets/trashcan-icon.png" alt=""></button>';
     }
   }
 };
@@ -32,20 +33,20 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
   
   var table = document.getElementById("userInfoTable").getElementsByTagName('tbody')[0];
   var newRow = table.insertRow(table.rows.length);
-  
-  var cell1 = newRow.insertCell(0);
-  var cell2 = newRow.insertCell(1);
-  var cell3 = newRow.insertCell(2);
-  var cell4 = newRow.insertCell(3);
-  var cell5 = newRow.insertCell(4);
-  var cell6 = newRow.insertCell(5);
+  var cell0 = newRow.insertCell(0);
+  var cell1 = newRow.insertCell(1);
+  var cell2 = newRow.insertCell(2);
+  let cell3 = newRow.insertCell(3);
+  var cell4 = newRow.insertCell(4);
+  var cell5 = newRow.insertCell(5);
+  // var cell6 = newRow.insertCell(5);
   
   cell1.innerHTML = name;
   cell2.innerHTML = email;
   cell3.innerHTML = marks;
   cell4.innerHTML = age;
-  cell5.innerHTML = degree;
-  cell6.innerHTML = '<button class="actionBtn" onclick="editRow(this)"><img src="assets/edit-icon.png" alt=""></button><button class="actionBtn" onclick="deleteRow(this)"><img src="assets/trashcan-icon.png" alt=""></button>';
+  cell5.innerHTML = degree + '<button class="actionBtn" onclick="deleteRow(this)"><img src="assets/trashcan-icon.png" alt=""></button><button class="actionBtn" onclick="editRow(this)"><img src="assets/edit-icon.png" alt=""></button>';
+  // cell6.innerHTML = '<button class="actionBtn" onclick="editRow(this)"><img src="assets/edit-icon.png" alt=""></button><button class="actionBtn" onclick="deleteRow(this)"><img src="assets/trashcan-icon.png" alt=""></button>';
   
   // Save data to local storage
   var userData = JSON.parse(localStorage.getItem("userInfo")) || [];
@@ -75,11 +76,11 @@ function editRow(row) {
   val.value = 'Edit Student';
   var rowIndex = row.parentNode.parentNode.rowIndex;
   var table = document.getElementById("userInfoTable");
-  var name = table.rows[rowIndex].cells[0].innerHTML;
-  var email = table.rows[rowIndex].cells[1].innerHTML;
-  var marks = table.rows[rowIndex].cells[2].innerHTML;
-  var age = table.rows[rowIndex].cells[3].innerHTML;
-  var degree = table.rows[rowIndex].cells[4].innerHTML;
+  var name = table.rows[rowIndex].cells[1].innerHTML;
+  var email = table.rows[rowIndex].cells[2].innerHTML;
+  var marks = table.rows[rowIndex].cells[3].innerHTML;
+  var age = table.rows[rowIndex].cells[4].innerHTML;
+  var degree = table.rows[rowIndex].cells[5].textContent;
   
   document.getElementById("name").value = name;
   document.getElementById("email").value = email;

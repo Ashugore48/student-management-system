@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Management System</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/manage.png">
+    <link rel="icon" href="assets/manage.png" />
   </head>
   <body>
     <h1>Student Management CRUD</h1>
@@ -29,6 +29,9 @@
           type="number"
           id="marks"
           class="input-box"
+          min="0"
+          max="10"
+          step="0.01"
           required
           placeholder="GPA"
         /><br />
@@ -47,7 +50,13 @@
           placeholder="Degree"
         /><br />
       </div>
-      <input type="submit" id="submit-btn" value="Add Student" onclick="changeBtn()" class="submit-btn" />
+      <input
+        type="submit"
+        id="submit-btn"
+        value="Add Student"
+        onclick="changeBtn()"
+        class="submit-btn"
+      />
     </form>
     <br /><br />
     <input
@@ -57,16 +66,17 @@
       placeholder="Search by Name, Email, or Degree"
     />
     <br /><br />
-    <br>
+    <br />
     <table id="userInfoTable" class="student-table">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Student Name</th>
           <th>Email</th>
           <th>GPA</th>
           <th>Age</th>
           <th>Degree</th>
-          <th>Action</th>
+          <!-- <th>Action</th> -->
         </tr>
       </thead>
       <tbody></tbody>
