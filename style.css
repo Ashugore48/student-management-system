@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 40px;
+    background-color: rgb(17,17,17);
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+h1{
+    font-weight: 400;
+    font-size: 48px;
+}
+.container{
+    padding-block: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.input-box{
+    border: 1px solid rgb(136, 136, 136);
+    background-color: rgb(17,17,17);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    height: 40px;
+    width: 445px;
+    padding-left: 10px;
+}
+
+.submit-btn{
+    width: 560px;
+    height: 36px;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.search-table{
+    border: 1px solid rgb(136, 136, 136);
+    background-color: rgb(17,17,17);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+}
+table, th, td{
+    border: 1px solid rgb(136, 136, 136);
+    padding: 15px 13px;
+}
+td{
+    border-bottom: none;
+}
+table{
+    font-family: 'Inter', sans-serif;
+    color: rgb(136, 136, 136);
+    border-collapse: collapse;
+    width: 100%;
+}
+.actionBtn{
+    background-color: rgb(17,17,17);
+    border: none;
+    outline: none;
+    margin-right: 5px;
+    cursor: pointer;
+}
+img{
+    width: 15px;
+}
